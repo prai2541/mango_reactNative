@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Alert, ScrollView } from "react-native";
 import HistList from "../Components/history_list";
 
 export default class HistoryLists extends Component {
@@ -6,35 +7,55 @@ export default class HistoryLists extends Component {
     datas: [
       {
         date: "date1",
-        loc: "loc",
-        time: "time"
+        checkin: "8:30",
+        checkout: "16:00",
+        store: "loc",
+        province: "province",
+        approved: true
       },
       {
         date: "date2",
-        loc: "loc",
-        time: "time"
+        checkin: "checkin",
+        checkout: "checkout",
+        store: "loc",
+        province: "province",
+        approved: true
       },
       {
         date: "date3",
-        loc: "loc",
-        time: "time"
+        checkin: "checkin",
+        checkout: "checkout",
+        store: "loc",
+        province: "province",
+        approved: true
       },
       {
         date: "date4",
-        loc: "loc",
-        time: "time"
-      },
-      {
-        date: "date5",
-        loc: "loc",
-        time: "time"
+        checkin: "checkin",
+        checkout: "checkout",
+        store: "loc",
+        province: "province",
+        approved: true
       }
     ]
   };
 
+  handleClick = date => {
+    Alert.alert(date + " Tapped");
+  };
+
   render() {
-    return this.state.datas.map(data => (
-      <HistList data={data} id={data.date} key={data.date} />
-    ));
+    return (
+      <ScrollView>
+        {this.state.datas.map(data => (
+          <HistList
+            data={data}
+            id={data.date}
+            key={data.date}
+            onClick={this.handleClick}
+          />
+        ))}
+      </ScrollView>
+    );
   }
 }

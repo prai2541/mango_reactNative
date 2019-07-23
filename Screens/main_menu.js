@@ -38,7 +38,7 @@ export default class MainMenu extends React.Component {
           <View style={{ flexDirection: "row", justifyContent: "center" }}>
             <CustomButton
               title="แจ้งขอลา"
-              onClick={() => this.props.navigation.push("hist")}
+              onClick={() => this.props.navigation.push("supervisor")}
             />
             <View style={{ width: 20 }} />
             <CustomButton
