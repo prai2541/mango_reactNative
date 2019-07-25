@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Checkin from "../Components/checkin_button";
 import Logout from "../Components/logout-button";
 import CustomButton from "../Components/custom_button";
+
 export default class MainMenu extends Component {
   static navigationOptions = {
     header: null
