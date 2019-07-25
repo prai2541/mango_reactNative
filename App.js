@@ -7,7 +7,6 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 import TodayLists from "./Screens/today_lists";
 import Supervisor from "./Screens/supervisor";
 import Images from "./Screens/images";
-import { Root } from "native-base";
 
 const MainNavigator = createStackNavigator(
   {
@@ -51,11 +50,7 @@ class App extends Component {
   state = {};
 
   render() {
-    return (
-      <Root>
-        <AppContainer />
-      </Root>
-    );
+    return <AppContainer />;
   }
 }
 

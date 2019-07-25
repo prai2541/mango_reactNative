@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { ScrollView, Text } from "react-native";
-import { Container, Toast, Icon, Fab } from "native-base";
 import TodayList from "../Components/today_list";
 
 class TodayLists extends Component {
@@ -62,25 +61,16 @@ class TodayLists extends Component {
 
   render() {
     return (
-      <Container>
-        <ScrollView>
-          {this.state.datas.map(data => (
-            <TodayList
-              data={data}
-              key={data.name}
-              id={data.name}
-              onCostChange={this.handleCostChange}
-            />
-          ))}
-        </ScrollView>
-        <Fab
-          position="bottomLeft"
-          onPress={this.handleSave}
-          style={{ backgroundColor: "orange" }}
-        >
-          <Text style={{ fontSize: 14 }}>SAVE</Text>
-        </Fab>
-      </Container>
+      <ScrollView>
+        {this.state.datas.map(data => (
+          <TodayList
+            data={data}
+            key={data.name}
+            id={data.name}
+            onCostChange={this.handleCostChange}
+          />
+        ))}
+      </ScrollView>
     );
   }
 }
