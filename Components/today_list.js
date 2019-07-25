@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   checkin: { fontSize: 12, color: "grey" },
   checkout: { marginLeft: 15, fontSize: 12, color: "grey" },
   dropdownButton: {
-    borderColor: "teal",
+    borderColor: "orange",
     borderWidth: 2,
     borderRadius: 20,
     paddingTop: 7,
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15
   },
   statusButton: {
-    borderColor: "teal",
+    borderColor: "orange",
     borderWidth: 2,
     borderRadius: 20,
     marginTop: 5,
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15
   },
   textButton: {
-    color: "teal",
+    color: "orange",
     fontSize: 12,
     fontWeight: "bold",
     textAlignVertical: "center"

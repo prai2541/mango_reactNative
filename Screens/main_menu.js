@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import * as widget from "react-native-elements";
 import Checkin from "../Components/checkin_button";
 import Logout from "../Components/logout-button";
 import CustomButton from "../Components/custom_button";
-import { createStackNavigator, createAppContainer } from "react-navigation";
-
-export default class MainMenu extends React.Component {
+export default class MainMenu extends Component {
   static navigationOptions = {
     header: null
   };

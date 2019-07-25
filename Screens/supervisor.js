@@ -18,7 +18,7 @@ const TabNavigator = createMaterialTopTabNavigator(
       upperCaseLabel: false,
       inactiveBackgroundColor: "#fff",
       style: {
-        backgroundColor: "teal"
+        backgroundColor: "orange"
       },
       indicatorStyle: {
         backgroundColor: "white"

@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     borderRadius: 400,
-    backgroundColor: "#46b5a6"
+    backgroundColor: "orange"
   }
 });
 

@@ -40,9 +40,11 @@ export default class HistoryLists extends Component {
     ]
   };
 
-  handleClick = date => {
-    Alert.alert(date + " Tapped");
+  handlePhoto = () => {
+    this.props.navigation.push("images");
   };
+
+  static navigationOptions = { title: "History" };
 
   render() {
     return (
@@ -53,6 +55,7 @@ export default class HistoryLists extends Component {
             id={data.date}
             key={data.date}
             onClick={this.handleClick}
+            onPhotoClick={this.handlePhoto}
           />
         ))}
       </ScrollView>

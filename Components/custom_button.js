@@ -8,7 +8,7 @@ class CustomButton extends Component {
     return (
       <TouchableOpacity onPress={this.props.onClick}>
         <View style={styles.twobutton}>
-          <Text style={{ fontSize: 16, color: "#46b5a6" }}>
+          <Text style={{ fontSize: 16, color: "orange" }}>
             {this.props.title}
           </Text>
         </View>
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   twobutton: {
     padding: 5,
     borderRadius: 35,
-    borderColor: "#46b5a6",
+    borderColor: "orange",
     borderWidth: 1,
     width: 150,
     height: 50,

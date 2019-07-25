@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { ScrollView } from "react-native";
+import { ScrollView, Text } from "react-native";
+import { Container, Toast, Icon, Fab } from "native-base";
 import TodayList from "../Components/today_list";
 
 class TodayLists extends Component {
@@ -12,7 +13,7 @@ class TodayLists extends Component {
         position: "position",
         store: "store",
         province: "province",
-        cost: "full"
+        cost: "Full"
       },
       {
         name: "firstname lastname2",
@@ -21,7 +22,7 @@ class TodayLists extends Component {
         position: "position",
         store: "store",
         province: "province",
-        cost: "full"
+        cost: "Full"
       },
       {
         name: "firstname lastname3",
@@ -30,7 +31,7 @@ class TodayLists extends Component {
         position: "position",
         store: "store",
         province: "province",
-        cost: "full"
+        cost: "Full"
       },
       {
         name: "firstname lastname4",
@@ -39,7 +40,7 @@ class TodayLists extends Component {
         position: "position",
         store: "store",
         province: "province",
-        cost: "full"
+        cost: "Full"
       }
     ]
   };
@@ -52,18 +53,34 @@ class TodayLists extends Component {
     this.setState({ datas });
   };
 
+  handleSave = () => {
+    Toast.show({
+      text: "Saved",
+      buttonText: "Okay"
+    });
+  };
+
   render() {
     return (
-      <ScrollView>
-        {this.state.datas.map(data => (
-          <TodayList
-            data={data}
-            key={data.name}
-            id={data.name}
-            onCostChange={this.handleCostChange}
-          />
-        ))}
-      </ScrollView>
+      <Container>
+        <ScrollView>
+          {this.state.datas.map(data => (
+            <TodayList
+              data={data}
+              key={data.name}
+              id={data.name}
+              onCostChange={this.handleCostChange}
+            />
+          ))}
+        </ScrollView>
+        <Fab
+          position="bottomLeft"
+          onPress={this.handleSave}
+          style={{ backgroundColor: "orange" }}
+        >
+          <Text style={{ fontSize: 14 }}>SAVE</Text>
+        </Fab>
+      </Container>
     );
   }
 }
