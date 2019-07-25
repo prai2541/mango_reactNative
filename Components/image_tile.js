@@ -9,19 +9,22 @@ class ImageTile extends Component {
         <Text
           style={{
             fontWeight: "bold",
-            fontSize: 16,
+            fontSize: 20,
             paddingLeft: 10,
             marginTop: 10,
             marginBottom: 5
           }}
         >
-          {this.props.caption}
+          {this.props.title}
         </Text>
         <Tile
           imageSrc={{ uri: "https://picsum.photos/400" }}
-          containerStyle={{ marginBottom: 5 }}
           activeOpacity={1}
+          contentContainerStyle={{ height: 0 }}
         />
+        <Text style={{ marginLeft: 0, paddingLeft: 10, marginBottom: 20 }}>
+          {this.props.remark}
+        </Text>
       </View>
     );
   }

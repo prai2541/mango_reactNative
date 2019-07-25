@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View } from "react-native";
+import { View, ScrollView } from "react-native";
 import ImageTile from "../Components/image_tile";
 
 class Images extends Component {
@@ -7,10 +7,10 @@ class Images extends Component {
 
   render() {
     return (
-      <View>
-        <ImageTile caption="CHECK-IN" />
-        <ImageTile caption="CHECK-OUT" />
-      </View>
+      <ScrollView>
+        <ImageTile title="CHECK-IN" remark="Remark : " />
+        <ImageTile title="CHECK-OUT" remark="Remark : " />
+      </ScrollView>
     );
   }
 }

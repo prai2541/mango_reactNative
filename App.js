@@ -4,9 +4,12 @@ import { Button } from "react-native-elements";
 import MainMenu from "./Screens/main_menu";
 import HistoryLists from "./Screens/history_lists";
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import TodayLists from "./Screens/today_lists";
 import Supervisor from "./Screens/supervisor";
 import Images from "./Screens/images";
+import { AppLoading } from "expo";
+import * as Font from "expo-font";
+import { Ionicons } from "@expo/vector-icons";
+import { Root } from "native-base";
 
 const MainNavigator = createStackNavigator(
   {
@@ -47,10 +50,32 @@ const MainNavigator = createStackNavigator(
 const AppContainer = createAppContainer(MainNavigator);
 
 class App extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      isReady: false
+    };
+  }
+
+  async componentDidMount() {
+    await Font.loadAsync({
+      Roboto: require("native-base/Fonts/Roboto.ttf"),
+      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
+      ...Ionicons.font
+    });
+    this.setState({ isReady: true });
+  }
 
   render() {
-    return <AppContainer />;
+    if (!this.state.isReady) {
+      return <AppLoading />;
+    }
+
+    return (
+      <Root>
+        <AppContainer />
+      </Root>
+    );
   }
 }
 

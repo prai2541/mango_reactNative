@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { ScrollView, Text } from "react-native";
+import { ScrollView, Text, StyleSheet, View } from "react-native";
 import TodayList from "../Components/today_list";
+import { Toast, Fab } from "native-base";
 
 class TodayLists extends Component {
   state = {
@@ -12,7 +13,8 @@ class TodayLists extends Component {
         position: "position",
         store: "store",
         province: "province",
-        cost: "Full"
+        cost: "Full",
+        status: "Normal"
       },
       {
         name: "firstname lastname2",
@@ -21,7 +23,8 @@ class TodayLists extends Component {
         position: "position",
         store: "store",
         province: "province",
-        cost: "Full"
+        cost: "Full",
+        status: "Normal"
       },
       {
         name: "firstname lastname3",
@@ -30,7 +33,8 @@ class TodayLists extends Component {
         position: "position",
         store: "store",
         province: "province",
-        cost: "Full"
+        cost: "Full",
+        status: "Normal"
       },
       {
         name: "firstname lastname4",
@@ -39,7 +43,8 @@ class TodayLists extends Component {
         position: "position",
         store: "store",
         province: "province",
-        cost: "Full"
+        cost: "Full",
+        status: "Normal"
       }
     ]
   };
@@ -52,6 +57,14 @@ class TodayLists extends Component {
     this.setState({ datas });
   };
 
+  handleStatusChange = (value, data) => {
+    const datas = [...this.state.datas];
+    const index = datas.indexOf(data);
+    datas[index] = { ...data };
+    datas[index].status = value;
+    this.setState({ datas });
+  };
+
   handleSave = () => {
     Toast.show({
       text: "Saved",
@@ -61,18 +74,37 @@ class TodayLists extends Component {
 
   render() {
     return (
-      <ScrollView>
-        {this.state.datas.map(data => (
-          <TodayList
-            data={data}
-            key={data.name}
-            id={data.name}
-            onCostChange={this.handleCostChange}
-          />
-        ))}
-      </ScrollView>
+      <View>
+        <ScrollView>
+          {this.state.datas.map(data => (
+            <TodayList
+              data={data}
+              key={data.name}
+              id={data.name}
+              onCostChange={this.handleCostChange}
+              onStatusChange={this.handleStatusChange}
+            />
+          ))}
+        </ScrollView>
+        <Fab
+          position="bottomRight"
+          style={{ backgroundColor: "orange" }}
+          onPress={this.handleSave}
+        >
+          <Text style={styles.textButton}>Save</Text>
+        </Fab>
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  textButton: {
+    fontSize: 12,
+    color: "white",
+    fontWeight: "bold",
+    alignContent: "center"
+  }
+});
 
 export default TodayLists;

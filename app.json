@@ -1,14 +1,10 @@
 {
   "expo": {
-    "name": "help",
-    "slug": "help",
+    "name": "Mango React Native",
+    "slug": "mango_react_native",
     "privacy": "public",
     "sdkVersion": "33.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,11 +16,13 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
+      "bundleIdentifier": "com.mango.reactnative",
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.mango.reactnative"
     }
   }
 }
