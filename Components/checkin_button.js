@@ -22,7 +22,7 @@ class CheckinButton extends Component {
 
   _pickImage = async () => {
     let result = await ImagePicker.launchCameraAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      mediaTypes: ImagePicker.MediaTypeOptions.CAMERA,
       allowsEditing: true,
       aspect: [4, 3]
     });
